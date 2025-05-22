@@ -1,8 +1,43 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
+/* Core layout for full-screen transition-based UI */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Smooth color transitions on section change */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-smooth: always;
+}
+
+/* Button behavior */
+button {
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Link hover effects */
+a {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* 🔵 Custom Scrollbar for Experience */
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #06b6d4;
+  border-radius: 8px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
 }

@@ -10,10 +10,15 @@
   "dependencies": {
     "@astrojs/react": "^4.2.7",
     "@astrojs/tailwind": "^6.0.2",
+    "@react-three/drei": "^10.0.8",
+    "@react-three/fiber": "^9.1.2",
     "framer-motion": "^12.12.1",
+    "gsap": "^3.13.0",
+    "locomotive-scroll": "^4.1.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "shiki": "^3.4.2"
+    "shiki": "^3.4.2",
+    "three": "^0.176.0"
   },
   "devDependencies": {
     "astro": "^5.7.13",
