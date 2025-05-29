@@ -5,36 +5,26 @@ const experienceData = [
   {
     title: "Graduate Engineer Trainee",
     company: "Bureau Veritas",
-    logo: "https://placehold.co/80x40/ffffff/333333?text=BV&font=Inter",
+    logo: "/exp/bv.webp",
     duration: "Jan 2023 – Jun 2023",
     location: "Delhi",
     points: [
-      "Assisted in AWS EC2, S3 setup",
-      "SQL Server management & Terraform setup",
-      "Documentation and QA support"
+      "Assisted in AWS EC2 and S3 setup for secure cloud infrastructure.",
+      "Managed SQL Server operations and configured Terraform for infrastructure as code.",
+      "Contributed to QA documentation and project handover deliverables."
     ]
   },
   {
-    title: "Intern – TCS",
-    company: "Tata Consultancy Services",
-    logo: "https://placehold.co/80x40/ffffff/333333?text=TCS&font=Inter",
-    duration: "Aug 2022 – Dec 2022",
-    location: "Remote",
+    title: "Data Analyst",
+    company: "Alteryx",
+    logo: "/exp/al.png",
+    duration: "Dec 2022 - March 2023",
+    location: "",
     points: [
-      "Built dashboards using React + Chart.js",
-      "Worked with Agile team on cloud-native prototypes"
-    ]
-  },
-  {
-    title: "Software Developer",
-    company: "Tech Solutions Inc.",
-    logo: "https://placehold.co/80x40/ffffff/333333?text=TSI&font=Inter",
-    duration: "May 2021 – Jul 2022",
-    location: "San Francisco (Remote Option)",
-    points: [
-      "Developed features for a SaaS platform using Node.js and React.",
-      "Collaborated with UX/UI designers to implement responsive interfaces.",
-      "Participated in code reviews and agile sprint planning."
+      "Engineered robust data pipelines using Alteryx Designer, improving model readiness and reducing processing time by 30%.",
+      "Translated business requirements into actionable insights and dashboards for predictive analysis.",
+      "Collaborated with data scientists and business teams to deliver scalable, automated workflows.",
+      "Implemented automated reporting solutions enabling non-technical teams to access insights independently."
     ]
   }
 ];
@@ -45,8 +35,7 @@ const CARD_GAP = 32;
 export default function Experience() {
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(false);
-  // State to dynamically set justify-content class
-  const [currentJustify, setCurrentJustify] = useState('justify-center'); // Default to center
+  const [currentJustify, setCurrentJustify] = useState('justify-center');
   const scrollableCardsRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -57,65 +46,29 @@ export default function Experience() {
       const scrollLeft = container.scrollLeft;
       const scrollWidth = container.scrollWidth;
       const clientWidth = container.clientWidth;
-      
-      const overflowDetectionThreshold = 1; // Minimal difference to consider it overflowing
-      const buttonVisibilityThreshold = 5;  // Buffer for button visibility checks
+      const threshold = 5;
 
-      // Determine new justification based on overflow
-      const newJustifyValue = (scrollWidth > clientWidth + overflowDetectionThreshold) 
-                              ? 'justify-start' 
-                              : 'justify-center';
-      
-      // Only update state if the value has actually changed to prevent unnecessary re-renders
-      if (currentJustify !== newJustifyValue) {
-        setCurrentJustify(newJustifyValue);
-      }
+      const newJustify = scrollWidth > clientWidth + 1 ? 'justify-start' : 'justify-center';
+      if (currentJustify !== newJustify) setCurrentJustify(newJustify);
 
-      // Determine button visibility
-      const canScroll = scrollWidth > clientWidth + buttonVisibilityThreshold;
-
-      if (!canScroll) {
-        setShowLeftButton(false);
-        setShowRightButton(false);
-      } else {
-        setShowLeftButton(scrollLeft > buttonVisibilityThreshold);
-        setShowRightButton(scrollLeft < scrollWidth - clientWidth - buttonVisibilityThreshold);
-      }
+      const canScroll = scrollWidth > clientWidth + threshold;
+      setShowLeftButton(canScroll && scrollLeft > threshold);
+      setShowRightButton(canScroll && scrollLeft < scrollWidth - clientWidth - threshold);
     };
 
-    updateLayoutAndButtons(); // Call once on mount and after every data/layout change
-
-    // Add event listeners
+    updateLayoutAndButtons();
     window.addEventListener('resize', updateLayoutAndButtons);
     container.addEventListener('scroll', updateLayoutAndButtons);
 
-    // Cleanup listeners
     return () => {
       window.removeEventListener('resize', updateLayoutAndButtons);
       container.removeEventListener('scroll', updateLayoutAndButtons);
     };
-    // Dependencies:
-    // - experienceData.length: if the number of cards changes.
-    // - currentJustify: To re-run the effect if setCurrentJustify caused a change that needs reconciliation,
-    //   though the direct state update causing a re-render usually handles this.
-    // For simplicity and matching original patterns, if experienceData is defined statically above,
-    // an empty array `[]` could be used, relying on listeners. However, to be robust against
-    // changes in card count if experienceData were a prop:
-  }, [experienceData.length, currentJustify]); // Added currentJustify to dependencies to ensure effect re-runs if it changes.
-
+  }, [experienceData.length, currentJustify]);
 
   return (
-    <section id="experience" className="py-20 px-6 bg-transparent text-white relative min-h-screen overflow-hidden">
-      <motion.h2
-        className="text-3xl font-extrabold mb-16 text-center"
-        initial={{ opacity: 0, y: -80 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        Work Experience
-      </motion.h2>
-
-      <div className="relative w-full px-4">
+    <section id="experience" className="pt-16 px-4 pb-0 bg-transparent text-white min-h-screen">
+      <div className="relative w-full">
         {showLeftButton && (
           <button
             onClick={() => {
@@ -126,14 +79,13 @@ export default function Experience() {
               hover:scale-110 hover:border-cyan-500/60
               text-cyan-300 hover:text-white p-3 rounded-full animate-float"
           >
-            <span className="text-2xl font-bold">←</span>
+            ←
           </button>
         )}
 
         <div
           ref={scrollableCardsRef}
-          // Dynamically set justify-content class
-          className={`flex overflow-x-auto snap-x snap-mandatory custom-scroll pb-4 hide-scrollbar ${currentJustify}`}
+          className={`flex overflow-x-auto custom-scroll pb-4 hide-scrollbar ${currentJustify}`}
           style={{ gap: `${CARD_GAP}px` }}
         >
           {experienceData.map((exp, i) => (
@@ -143,40 +95,34 @@ export default function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
-              className="relative rounded-xl p-[3px] bg-gradient-to-br from-cyan-300 via-pink-500 to-red-600 flex-shrink-0 snap-start shadow-xl"
+              className="relative rounded-xl p-[3px] bg-gradient-to-br from-cyan-300 via-pink-500 to-red-600 flex-shrink-0 shadow-xl"
               style={{ width: `${CARD_WIDTH}px` }}
             >
               <div className="bg-gray-800 rounded-[10px] h-full w-full p-6 relative">
                 <div
-                  className="absolute"
-                  style={{
-                    top: "5px",
-                    right: "-8%",
-                    width: "80px",
-                    height: "40px",
-                    backgroundColor: "white",
-                    border: "2px solid rgba(6, 182, 212, 0.7)",
-                    borderRadius: "0.375rem",
-                    boxShadow: "0 4px 10px rgba(6, 182, 212, 0.3)",
-                    padding: "2px",
-                    zIndex: 20
-                  }}
+                  className="absolute top-[5px] right-[-8%] w-[80px] h-[40px] bg-white border-2 rounded-md shadow-lg p-[2px] z-20"
                 >
                   <img
                     src={exp.logo}
                     alt={`${exp.company} logo`}
-                    className="w-full h-full object-contain"
-                    onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/80x40/ffffff/CCCCCC?text=Error&font=Inter"; }}
+                    className="w-full h-full object-fill rounded-sm"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = "https://placehold.co/80x40/ffffff/CCCCCC?text=Error&font=Inter";
+                    }}
                   />
                 </div>
                 <div className="relative z-0">
-                  <h3 className="text-xl font-semibold text-cyan-300 mb-1 pr-[40px] whitespace-normal break-words">
-                    {exp.title} – {exp.company}
-                  </h3>
-                  <p className="text-sm text-gray-400 mb-3 pr-[40px]">
-                    {exp.duration} | {exp.location}
+                  <h2 className="text-2xl font-bold text-gray-100 mb-1 pr-[20px] whitespace-normal break-words">
+                    {exp.company}
+                  </h2>
+                  <h7 className="text-xl font-semibold text-cyan-400 mb-2 pr-[5px] whitespace-normal break-words">
+                    {exp.title}
+                  </h7>
+                  <p className="text-sm text-gray-200 mb-2 pr-[5px]">
+                    {exp.duration} {exp.location ? `| ${exp.location}` : ""}
                   </p>
-                  <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm">
+                  <ul className="list-disc pl-4 pr-2 text-white text-sm space-y-1 leading-relaxed">
                     {exp.points.map((pt, idx) => (
                       <li key={idx}>{pt}</li>
                     ))}
@@ -197,7 +143,7 @@ export default function Experience() {
               hover:scale-110 hover:border-purple-500/60
               text-purple-300 hover:text-white p-3 rounded-full animate-float"
           >
-            <span className="text-2xl font-bold">→</span>
+            →
           </button>
         )}
       </div>

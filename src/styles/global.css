@@ -2,42 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Core layout for full-screen transition-based UI */
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   height: 100%;
+  overflow-x: hidden; /* ✅ only hide horizontal overflow */
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  background-color: #000000;
+  color: #ffffff;
+  scroll-padding-top: 8rem;
 }
 
-/* Smooth color transitions on section change */
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
-  font-smooth: always;
 }
 
-/* Button behavior */
-button {
-  -webkit-tap-highlight-color: transparent;
-  transition: all 0.3s ease;
-  cursor: pointer;
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
-/* Link hover effects */
-a {
-  @apply transition-all duration-300 ease-in-out;
-}
-
-/* 🔵 Custom Scrollbar for Experience */
-.custom-scroll::-webkit-scrollbar {
-  width: 6px;
-}
-.custom-scroll::-webkit-scrollbar-thumb {
-  background: #06b6d4;
-  border-radius: 8px;
-}
-.custom-scroll::-webkit-scrollbar-track {
-  background: transparent;
+.neon-glow {
+  text-shadow: 0 0 4px #ff00cc, 0 0 8px #ff00cc, 0 0 12px #ff00cc;
 }

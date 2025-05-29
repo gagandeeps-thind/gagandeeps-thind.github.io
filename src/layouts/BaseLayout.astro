@@ -1,6 +1,7 @@
 ---
 import LuxuryBackground from "../components/LuxuryBackground.jsx";
 ---
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,10 +11,10 @@ import LuxuryBackground from "../components/LuxuryBackground.jsx";
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-black text-white font-sans scroll-smooth">
-    <>
-      <LuxuryBackground client:only="react" />
+  <body class="bg-black text-white font-sans scroll-smooth min-h-screen overflow-x-hidden">
+    <LuxuryBackground client:only="react" />
+    <main class="relative z-10">
       <slot />
-    </>
+    </main>
   </body>
 </html>
