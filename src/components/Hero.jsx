@@ -23,7 +23,7 @@ export default function Hero() {
     >
       {/* 🖼 Profile Image */}
       <motion.img
-        src="/profile.jpg" // 🔁 Replace with your image in /public/
+        src="/profile_pic.jpg" // 🔁 Replace with your image in /public/
         alt="Gagandeep Thind"
         className="w-40 h-40 md:w-60 md:h-60 rounded-full object-cover shadow-xl border-4 border-white"
         initial={{ opacity: 0, scale: 0.8 }}
