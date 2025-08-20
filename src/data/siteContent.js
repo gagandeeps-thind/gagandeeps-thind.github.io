@@ -45,45 +45,46 @@ export const experience = [
 export const skills = [
   {
     title: "Programming Languages",
-    items: ["Python", "R", "SQL", "PySpark", "C++"],
+    items: ["Python", "R", "SQL", "PySpark"],
     icon: "/skills/pro_lang.svg",
   },
   {
     title: "Data Visualization",
-    items: ["PowerBI", "Tableau", "Streamlit", "Matplotlib, Plotly & Seaborn"],
+    items: ["PowerBI", "Tableau", "Streamlit", "Matplotlib", "Plotly", "Seaborn"],
     icon: "/skills/pbi.svg",
   },
   {
-    title: "Cloud Services (AWS/Azure)",
-    items: ["EC2", "Lambda", "Postgres", "DynamoDB", "Google BigQuery"],
+    title: "Cloud & MLOps (AWS/Azure)",
+    items: ["EC2", "Lambda", "S3", "DynamoDB", "Google BigQuery", "Azure ML", "SageMaker", "MLflow", "Docker"],
     icon: "/skills/cloud.png",
   },
   {
     title: "Data Science & AI",
-    items: ["Machine Learning", "Data Analysis", "Financial Modelling", "Artificial Intelligence"],
+    items: ["Machine Learning", "Deep Learning (TensorFlow, PyTorch)", "NLP & Transformers", "Time Series Forecasting", "Financial Modelling", "A/B Testing", "Hypothesis Testing", "Optimization"],
     icon: "/skills/ds.png",
   },
   {
-    title: "Platforms & Tools",
-    items: ["Databricks", "MS Office", "MS Teams", "GitHub"],
+    title: "Data Engineering & Workflow",
+    items: ["Databricks", "dbt", "ETL Pipelines", "MS Office", "MS Teams", "GitHub"],
     icon: "/skills/dp.png",
   },
   {
     title: "Databases & Storage",
-    items: ["PostgreSQL", "MySQL", "DynamoDB", "S3"],
+    items: ["PostgreSQL", "MySQL", "MS SQL-Server/TSQL", "Snowflake", "Redshift", "BigQuery", "DynamoDB", "S3"],
     icon: "/skills/db.png",
   },
   {
-    title: "Dev & Workflow",
-    items: ["Git", "VS Code", "RStudio", "Jupyter Notebook"],
+    title: "Dev & Tools",
+    items: ["Git", "VS Code", "RStudio", "Jupyter Notebook", "Colab"],
     icon: "/skills/colab.svg",
   },
   {
     title: "Soft Skills",
-    items: ["Stakeholder Management", "Data Storytelling", "Problem Solving", "Project Management"],
+    items: ["Stakeholder Management", "Data Storytelling", "Problem Solving", "Cross-functional Collaboration"],
     icon: "/skills/ss.png",
   }
 ];
+
 
 export const projects = [
   {
