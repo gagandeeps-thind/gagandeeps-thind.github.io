@@ -10,21 +10,22 @@ export const about = {
     github: 'https://github.com/gagandeep-thind',
     linkedin: 'https://www.linkedin.com/in/gagandeep-sthind',
     email: 'gagandeepsingh11678@gmail.com',
-    resume: 'public/Gagandeep Singh Thind\'s Resume.pdf'
+    resume: '/Resume.pdf'
   }
 };
 
 export const experience = [
   {
-    title: "Graduate Engineer Trainee",
-    company: "Bureau Veritas",
-    logo: "/exp/bv.webp",
-    duration: "Jan 2023 – Jun 2023",
-    location: "Delhi",
+    title: "Data Scientist Research Assistant [Internship]",
+    company: "University of Calgary",
+    logo: "/uofc.png",
+    duration: "May 2025 – Aug 2025",
+    location: "Calgary",
     points: [
-      "Assisted in AWS EC2 and S3 setup for secure cloud infrastructure.",
-      "Managed SQL Server operations and configured Terraform for infrastructure as code.",
-      "Contributed to QA documentation and project handover deliverables.",
+      "Architected and led development of QuantEdgeX, a cloud-native stock prediction platform on Azure, achieving 70–85% directional accuracy on 5-minute price forecasts by integrating FinBERT-powered sentiment analysis with market data.",
+      "Designed and deployed a hybrid SARIMAX + XGBoost pipeline, engineering predictive features such as RSI, exponential moving averages (EMAs), and a novel time-decayed sentiment score to capture complex intraday dynamics.",
+      "Automated the full MLOps lifecycle, including real-time ingestion (Azure Databricks), daily model retraining, versioning with Azure ML, and scheduled inference, ensuring adaptability to evolving market regimes.",
+      "Delivered interactive insights via a Streamlit dashboard with live visualizations and an integrated Gemini API chatbot, enabling conversational explanations of signals, model outputs, and trading strategies for end users.",
     ],
   },
   {
@@ -34,10 +35,9 @@ export const experience = [
     duration: "Dec 2022 - March 2023",
     location: "",
     points: [
-      "Engineered robust data pipelines using Alteryx Designer, improving model readiness and reducing processing time by 30%.",
-      "Translated business requirements into actionable insights and dashboards for predictive analysis.",
-      "Collaborated with data scientists and business teams to deliver scalable, automated workflows.",
-      "Implemented automated reporting solutions enabling non-technical teams to access insights independently.",
+      "Utilized Alteryx Designer to perform data cleaning, wrangling, and visualization; reduced data processing time by 30% by streamlining ETL pipelines.",
+      "Collaborated closely with cross-functional teams to gather requirements and present insights, demonstrating strong communication and stakeholder management.",
+      "Showcased adaptability and creative problem-solving by proposing automated reporting solutions that improved efficiency for non-technical stakeholders.",
     ],
   },
 ];

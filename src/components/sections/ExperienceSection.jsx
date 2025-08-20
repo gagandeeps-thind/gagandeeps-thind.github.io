@@ -5,7 +5,6 @@ import { experience } from '../../data/siteContent.js';
 
 export default function ExperienceSection() {
   return (
-    // no title -> no heading and no extra top gap (Section handles it)
     <Section id="experience" width="default">
       <ul className="space-y-6">
         {experience.map((job, idx) => {
@@ -31,9 +30,12 @@ export default function ExperienceSection() {
                   />
                 )}
                 <div className="flex-1">
-                  <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    {/* company only — no job title */}
-                    <h3 className="text-xl font-semibold">{company}</h3>
+                  <div className="flex flex-wrap justify-between items-start gap-2">
+                    {/* Job Title */}
+                    {job.title && (
+                      <h3 className="text-xl font-semibold">{job.title}</h3>
+                    )}
+                    {/* Location + Duration */}
                     {(location || duration) && (
                       <span className="text-sm text-gray-400">
                         {[location, duration].filter(Boolean).join(' • ')}
@@ -41,6 +43,10 @@ export default function ExperienceSection() {
                     )}
                   </div>
 
+                  {/* Company Name under Title */}
+                  <p className="text-gray-300">{company}</p>
+
+                  {/* Bullet Points */}
                   {points.length > 0 && (
                     <ul className="list-disc list-inside space-y-1 text-gray-200 mt-2">
                       {points.map((h, i) => (
