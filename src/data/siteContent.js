@@ -10,7 +10,7 @@ export const about = {
     github: 'https://github.com/gagandeep-thind',
     linkedin: 'https://www.linkedin.com/in/gagandeep-sthind',
     email: 'gagandeepsingh11678@gmail.com',
-    resume: '/Resume.pdf'
+    resume: '/DataScientist_MLEng_GagandeepSinghThind.docx'
   }
 };
 
