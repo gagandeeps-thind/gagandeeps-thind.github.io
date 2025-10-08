@@ -88,6 +88,51 @@ export const skills = [
 
 export const projects = [
   {
+    title: "Canadian Housing Price Predictor & Market Analysis",
+    image: "",
+    subtitle: "",
+    description: "",
+    tags: ["#NLP", "#AWS", "#FinancialML", "#SentimentAnalysis","#TimeSeries"],
+    color: "text-orange-500",
+    gitRepo: "https://github.com/gagandeep-thind/" // Replace with actual repo URL
+  },
+  {
+    title: "Customer Churn Prediction Pipeline",
+    image: "",
+    subtitle: "",
+    description: "",
+    tags: ["#NLP", "#AWS", "#FinancialML", "#SentimentAnalysis","#TimeSeries"],
+    color: "text-orange-500",
+    gitRepo: "https://github.com/gagandeep-thind/" // Replace with actual repo URL
+  },
+  {
+    title: "Real-Time Fraud Detection System (FinTech)",
+    image: "",
+    subtitle: "",
+    description: "",
+    tags: ["#NLP", "#AWS", "#FinancialML", "#SentimentAnalysis","#TimeSeries"],
+    color: "text-orange-500",
+    gitRepo: "https://github.com/gagandeep-thind/" // Replace with actual repo URL
+  },
+  {
+    title: "AI-Powered Government Policy Assistant (NLP)",
+    image: "",
+    subtitle: "",
+    description: "",
+    tags: ["#NLP", "#AWS", "#FinancialML", "#SentimentAnalysis","#TimeSeries"],
+    color: "text-orange-500",
+    gitRepo: "https://github.com/gagandeep-thind/" // Replace with actual repo URL
+  },
+  {
+    title: "Smart Grid Energy Demand Forecasting & Optimization",
+    image: "",
+    subtitle: "",
+    description: "",
+    tags: ["#NLP", "#AWS", "#FinancialML", "#SentimentAnalysis","#TimeSeries"],
+    color: "text-orange-500",
+    gitRepo: "https://github.com/gagandeep-thind/" // Replace with actual repo URL
+  },
+  {
     title: "TWEETSTORM TO WALL STREET",
     image: "/projects/ts.jpg",
     subtitle: "REAL-TIME STOCK FORECASTING WITH SENTIMENT AND AWS INTEGRATION",
