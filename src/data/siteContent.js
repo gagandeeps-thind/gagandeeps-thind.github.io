@@ -31,7 +31,7 @@ export const experience = [
   {
     title: "Graduate Engineer Trainee (GET) – Risk Analyst",
     company: "Bureau Veritas",
-    logo: "/bv.svg",
+    logo: "/bv.webp",
     duration: "Jun 2023 – Jun 2024",
     location: "India",
     points: [
