@@ -16,7 +16,7 @@ export const about = {
 
 export const experience = [
   {
-    title: "Data Scientist Research Assistant [Internship]",
+    title: "Data Scientist Research Assistant",
     company: "University of Calgary",
     logo: "/uofc.png",
     duration: "May 2025 – Aug 2025",
@@ -29,10 +29,23 @@ export const experience = [
     ],
   },
   {
+    title: "Graduate Engineer Trainee (GET) – Risk Analyst",
+    company: "Bureau Veritas",
+    logo: "/bv.svg",
+    duration: "Jun 2023 – Jun 2024",
+    location: "India",
+    points: [
+      "Collaborated with stakeholders to understand data requirements and deliver insights that align with business objectives, leading to a 100% client satisfaction.",
+      "Applied Python and SAS for predictive modeling, anomaly detection, and data analysis to optimize client data-driven decisions.",
+      "Digitalized risk assessments and audits for Fortune 500 companies, increasing scope and reducing manual effort by 50%.",
+      "Developed and implemented statistical analysis, hypothesis testing, and forecasting models to enhance targeting and performance measurement, aligning with business goals."
+    ],
+  },
+  {
     title: "Data Analyst",
     company: "Alteryx",
     logo: "/exp/al.png",
-    duration: "Dec 2022 - March 2023",
+    duration: "Dec 2022 - Mar 2023",
     location: "",
     points: [
       "Utilized Alteryx Designer to perform data cleaning, wrangling, and visualization; reduced data processing time by 30% by streamlining ETL pipelines.",
